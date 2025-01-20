@@ -79,7 +79,11 @@ curl -X POST https://mnwmj642cj.execute-api.ap-south-1.amazonaws.com/dev/math/ad
 
 This command sends a POST request to the `/dev/math/add` endpoint with JSON data containing two numbers to be added.
 
-##Screenshot of working code from terminal
+## Screenshot of working Addition Code from terminal
 
 ![alt text](image.png)
 ![alt text](image-1.png)
+
+## Screenshot of working File upload code:
+
+![alt text](image-2.png)
