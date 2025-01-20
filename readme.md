@@ -53,7 +53,10 @@ serverless offline start
 You can upload a file using `curl`:
 
 ```bash
-curl --data-binary @./path/to/your/file.pdf http://localhost:3000/dev/storage/upload
+curl -X POST http://localhost:3000/dev/storage/upload \
+  -H "Content-Type: application/pdf" \
+  -H "file-name: raviresume.pdf" \
+  --data-binary @./sample.pdf
 ```
 
 ### Testing the Add Function
