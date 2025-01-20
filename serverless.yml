@@ -1,10 +1,11 @@
+org: rajx02
 service: math-and-storage-service
 
 provider:
   name: aws
   runtime: nodejs16.x
   stage: ${opt:stage, 'dev'}
-  region: ${opt:region, 'us-east-1'}
+  region: ${opt:region, 'ap-south-1'}
 
   iam:
     role:
@@ -12,10 +13,7 @@ provider:
         - Effect: Allow
           Action:
             - s3:PutObject
-          Resource: "arn:aws:s3:::${self:custom.bucketName}/*"
-
-custom:
-  bucketName: ${self:service}-${self:provider.stage}-storage
+          Resource: arn:aws:s3:::r-bucket2025/*
 
 functions:
   addNumbers:
@@ -33,13 +31,6 @@ functions:
           path: storage/upload
           method: post
           cors: true
-
-resources:
-  Resources:
-    StorageBucket:
-      Type: AWS::S3::Bucket
-      Properties:
-        BucketName: ${self:custom.bucketName}
 
 plugins:
   - serverless-offline

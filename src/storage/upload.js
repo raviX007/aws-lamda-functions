@@ -1,7 +1,9 @@
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 
 const s3Client = new S3Client();
-const BUCKET_NAME = process.env.BUCKET_NAME;
+//const BUCKET_NAME = process.env.BUCKET_NAME;
+const BUCKET_NAME = "r-bucket2025";
+console.log("BUCKET_NAME is : ", BUCKET_NAME)
 
 const handler = async (event) => {
   try {

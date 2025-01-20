@@ -48,12 +48,20 @@ To run the function locally, use the Serverless Offline plugin:
 serverless offline start
 ```
 
+### Deploying the lambda functions to AWS
+
+To deloy Lambda functions to AWS run below command:
+
+```bash
+serverless deploy
+```
+
 ### Uploading a File
 
 You can upload a file using `curl`:
 
 ```bash
-curl -X POST http://localhost:3000/dev/storage/upload \
+curl -X POST https://mnwmj642cj.execute-api.ap-south-1.amazonaws.com/dev/storage/upload \
   -H "Content-Type: application/pdf" \
   -H "file-name: raviresume.pdf" \
   --data-binary @./sample.pdf
@@ -64,7 +72,7 @@ curl -X POST http://localhost:3000/dev/storage/upload \
 You can test the addition function using `curl`:
 
 ```bash
-curl -X POST http://localhost:3000/dev/math/add \
+curl -X POST https://mnwmj642cj.execute-api.ap-south-1.amazonaws.com/dev/math/add \
   -H "Content-Type: application/json" \
   -d '{"num1": 5, "num2": 3}'
 ```
