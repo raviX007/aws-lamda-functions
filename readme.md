@@ -56,6 +56,18 @@ You can upload a file using `curl`:
 curl --data-binary @./path/to/your/file.pdf http://localhost:3000/dev/storage/upload
 ```
 
+### Testing the Add Function
+
+You can test the addition function using `curl`:
+
+```bash
+curl -X POST http://localhost:3000/dev/math/add \
+  -H "Content-Type: application/json" \
+  -d '{"num1": 5, "num2": 3}'
+```
+
+This command sends a POST request to the `/dev/math/add` endpoint with JSON data containing two numbers to be added.
+
 ##Screenshot of working code from terminal
 
 ![alt text](image.png)
